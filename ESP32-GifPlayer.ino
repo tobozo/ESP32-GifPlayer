@@ -55,7 +55,8 @@
  *
 \*/
 
-//#define LGFX_ONLY
+//#define LGFX_ONLY // enable this for custom board profiles
+//#define USE_SPIFFS // requires "Large SPIFFS" partition !!
 
 #if defined LGFX_ONLY
   #include <LGFX_TFT_eSPI.hpp>
@@ -71,7 +72,10 @@
   #define tft M5.Lcd // syntax sugar
 #endif
 
-#ifdef M5STACK_SD
+#if defined USE_SPIFFS
+  #define GIFPLAYER_FS SPIFFS
+  #define GIFPLAYER_FS_Begin() SPIFFS.begin(true)
+#elif defined M5STACK_SD
   #define GIFPLAYER_FS M5STACK_SD
   #define GIFPLAYER_FS_Begin() M5.sd_begin()
 #else
