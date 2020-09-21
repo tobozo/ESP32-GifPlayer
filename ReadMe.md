@@ -1,4 +1,4 @@
-# ESP32-LGFX-SDCard-GifPlayer.ino
+# ESP32-GifPlayer 
 
 GIF player Demo for M5Stack, Odroid-GO, ESP32-Wrover-Kit, LoLinD32-Pro, D-Duino32-XS, and more...
 
